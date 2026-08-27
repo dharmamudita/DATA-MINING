@@ -1,17 +1,15 @@
-/* ==========================================================================
-   HEARTGUARD AI FLOATING CHATBOT WIDGET CSS (LIQUID GLASS + PORTALSPPG)
-   ========================================================================== */
-
 .chatContainer {
-  position: fixed;
-  bottom: 24px;
-  right: 24px;
-  z-index: 9999;
+  position: fixed !important;
+  bottom: 24px !important;
+  right: 24px !important;
+  z-index: 999999 !important;
   font-family: var(--font-sans);
+  pointer-events: none;
 }
 
 /* Floating Trigger Button */
 .chatToggleBtn {
+  pointer-events: auto;
   width: 62px;
   height: 62px;
   border-radius: 50%;

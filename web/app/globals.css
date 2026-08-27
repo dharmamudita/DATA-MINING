@@ -80,8 +80,6 @@ body {
   min-height: 100vh;
   overflow-x: hidden;
   position: relative;
-  /* Hardware Accelerated GPU Compositing */
-  transform: translateZ(0);
 }
 
 /* --- Smooth Page Enter Animation --- */

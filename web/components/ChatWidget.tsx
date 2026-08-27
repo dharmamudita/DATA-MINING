@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useRef, useEffect } from "react";
+import { createPortal } from "react-dom";
 import styles from "./ChatWidget.module.css";
 import { HeartPulseIcon, ZapIcon } from "./Icons";
 
@@ -27,12 +28,17 @@ const SUGGESTED_PROMPTS = [
 ];
 
 export default function ChatWidget() {
+  const [mounted, setMounted] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [hasUnread, setHasUnread] = useState(false);
   const [messages, setMessages] = useState<Message[]>(INITIAL_MESSAGES);
   const [input, setInput] = useState("");
   const [loading, setLoading] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -104,114 +110,116 @@ export default function ChatWidget() {
     }
   };
 
-  // Simple Markdown formatter for bold and bullet lists
-  const renderFormattedMessage = (content: string) => {
-    const lines = content.split("\n");
-    return lines.map((line, idx) => {
-      // Bullet points
-      if (line.trim().startsWith("- ") || line.trim().startsWith("* ")) {
-        const itemText = line.trim().substring(2);
+  const handleReset = () => {
+    setMessages(INITIAL_MESSAGES);
+    setInput("");
+    setHasUnread(false);
+  };
+
+  const formatMessageText = (text: string) => {
+    return text.split("\n").map((line, idx) => {
+      let formatted = line;
+
+      // Format bold markdown **text**
+      const parts = formatted.split(/(\*\*.*?\*\*)/g);
+      const elements = parts.map((part, pIdx) => {
+        if (part.startsWith("**") && part.endsWith("**")) {
+          return <strong key={pIdx}>{part.slice(2, -2)}</strong>;
+        }
+        return part;
+      });
+
+      if (line.startsWith("- ") || line.startsWith("• ")) {
         return (
-          <div key={idx} style={{ display: "flex", gap: "0.4rem", margin: "0.2rem 0" }}>
-            <span style={{ color: "#7D0404", fontWeight: 800 }}>•</span>
-            <span>{parseBold(itemText)}</span>
+          <div key={idx} className={styles.bulletItem}>
+            <span className={styles.bulletDot}>&bull;</span>
+            <span className={styles.bulletText}>{elements}</span>
           </div>
         );
       }
-      // Numbered points (e.g. 1. 2.)
-      const numMatch = line.trim().match(/^(\d+\.)\s+(.*)/);
-      if (numMatch) {
+
+      if (line.match(/^\d+\.\s/)) {
         return (
-          <div key={idx} style={{ display: "flex", gap: "0.4rem", margin: "0.2rem 0" }}>
-            <span style={{ color: "#7D0404", fontWeight: 800 }}>{numMatch[1]}</span>
-            <span>{parseBold(numMatch[2])}</span>
+          <div key={idx} className={styles.numberedItem}>
+            <span className={styles.numberedText}>{elements}</span>
           </div>
         );
       }
-      if (line.trim() === "") {
-        return <div key={idx} style={{ height: "0.5rem" }} />;
-      }
-      return <div key={idx}>{parseBold(line)}</div>;
+
+      return (
+        <p key={idx} className={styles.messageParagraph}>
+          {elements}
+        </p>
+      );
     });
   };
 
-  const parseBold = (text: string) => {
-    const parts = text.split(/(\*\*.*?\*\*)/g);
-    return parts.map((part, i) => {
-      if (part.startsWith("**") && part.endsWith("**")) {
-        return <strong key={i}>{part.slice(2, -2)}</strong>;
-      }
-      return part;
-    });
-  };
+  if (!mounted) return null;
 
-  return (
+  const content = (
     <div className={styles.chatContainer}>
-      {/* Chat Window Box */}
+      {/* Expanded Chat Window */}
       {isOpen && (
         <div className={styles.chatWindow}>
           {/* Header */}
           <div className={styles.chatHeader}>
-            <div className={styles.headerInfo}>
+            <div className={styles.headerLeft}>
               <div className={styles.headerAvatar}>
-                <HeartPulseIcon size={20} color="#FFFFFF" />
+                <HeartPulseIcon size={18} color="#FFFFFF" />
               </div>
-              <div>
-                <div className={styles.headerTitle}>HeartGuard AI Chat</div>
+              <div className={styles.headerInfo}>
+                <h4 className={styles.headerTitle}>HeartGuard AI Chat</h4>
                 <div className={styles.headerStatus}>
-                  <span className={styles.headerStatusDot} />
-                  <span>Online • Asisten Medis</span>
+                  <span className={styles.statusDot} />
+                  <span>Online &bull; Asisten Medis</span>
                 </div>
               </div>
             </div>
+
             <div className={styles.headerActions}>
               <button
                 className={styles.headerBtn}
-                onClick={() => setMessages(INITIAL_MESSAGES)}
+                onClick={handleReset}
                 title="Reset Percakapan"
               >
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><path d="M3 12a9 9 0 0 1 15-6.7L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15 6.7L3 16"/><path d="M3 21v-5h5"/></svg>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16"/><path d="M8 16H3v5"/></svg>
               </button>
               <button
                 className={styles.headerBtn}
                 onClick={() => setIsOpen(false)}
                 title="Tutup Chat"
               >
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
               </button>
             </div>
           </div>
 
-          {/* Messages Area */}
-          <div className={styles.chatMessages}>
+          {/* Messages Body */}
+          <div className={styles.chatBody}>
             {messages.map((msg) => (
               <div
                 key={msg.id}
-                className={`${styles.messageRow} ${
-                  msg.role === "user" ? styles.messageRowUser : styles.messageRowBot
+                className={`${styles.messageWrapper} ${
+                  msg.role === "user" ? styles.messageUser : styles.messageModel
                 }`}
               >
                 {msg.role === "model" && (
-                  <div className={styles.botAvatarBubble}>
+                  <div className={styles.modelAvatar}>
                     <HeartPulseIcon size={14} color="#FFFFFF" />
                   </div>
                 )}
-                <div
-                  className={`${styles.messageBubble} ${
-                    msg.role === "user" ? styles.messageBubbleUser : styles.messageBubbleBot
-                  }`}
-                >
-                  {renderFormattedMessage(msg.content)}
+                <div className={styles.messageBubble}>
+                  {formatMessageText(msg.content)}
                 </div>
               </div>
             ))}
 
             {loading && (
-              <div className={`${styles.messageRow} ${styles.messageRowBot}`}>
-                <div className={styles.botAvatarBubble}>
+              <div className={`${styles.messageWrapper} ${styles.messageModel}`}>
+                <div className={styles.modelAvatar}>
                   <HeartPulseIcon size={14} color="#FFFFFF" />
                 </div>
-                <div className={styles.typingIndicator}>
+                <div className={`${styles.messageBubble} ${styles.typingBubble}`}>
                   <span className={styles.typingDot} />
                   <span className={styles.typingDot} />
                   <span className={styles.typingDot} />
@@ -221,13 +229,14 @@ export default function ChatWidget() {
             <div ref={messagesEndRef} />
           </div>
 
-          {/* Suggested Quick Prompt Chips */}
-          <div className={styles.quickSuggestions}>
-            {SUGGESTED_PROMPTS.map((prompt, i) => (
+          {/* Quick Prompt Chips */}
+          <div className={styles.suggestionsTrack}>
+            {SUGGESTED_PROMPTS.map((prompt, idx) => (
               <button
-                key={i}
+                key={idx}
                 className={styles.suggestionChip}
                 onClick={() => handleSend(prompt)}
+                disabled={loading}
               >
                 {prompt}
               </button>
@@ -236,7 +245,7 @@ export default function ChatWidget() {
 
           {/* Input Form */}
           <form
-            className={styles.chatInputForm}
+            className={styles.inputForm}
             onSubmit={(e) => {
               e.preventDefault();
               handleSend();
@@ -283,4 +292,6 @@ export default function ChatWidget() {
       </button>
     </div>
   );
+
+  return createPortal(content, document.body);
 }
