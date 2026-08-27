@@ -1,0 +1,411 @@
+/* ==========================================================================
+   PORTALSPPG REPLICA AUTH STYLESHEET — PIXEL PERFECT SPLIT SCREEN
+   ========================================================================== */
+
+.splitPage {
+  display: flex;
+  min-height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+  background-color: #FFFFFF;
+  position: relative;
+}
+
+/* --------------------------------------------------------------------------
+   LEFT COLUMN: BRAND BANNER & CONCENTRIC RINGS (FIXED 100vh)
+   -------------------------------------------------------------------------- */
+.leftBrandCol {
+  flex: 0 0 46%;
+  width: 46%;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  background: radial-gradient(circle at 50% 40%, #9E0A0A 0%, #7D0404 42%, #4C0202 82%, #220101 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 2.5rem;
+  overflow: hidden;
+  z-index: 10;
+}
+
+/* Concentric layered rings centered directly at 40% (Epicenter of the logo badge) */
+.ambientCirclesBg {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 680px;
+  height: 680px;
+  pointer-events: none;
+}
+
+.circleOuter {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.04) 0%, rgba(255, 255, 255, 0) 70%);
+  border: 1.5px solid rgba(255, 255, 255, 0.06);
+}
+
+.circleMiddle {
+  position: absolute;
+  top: 15%;
+  left: 15%;
+  width: 70%;
+  height: 70%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.07) 0%, rgba(255, 255, 255, 0) 70%);
+  border: 1.5px solid rgba(255, 255, 255, 0.1);
+}
+
+.circleInner {
+  position: absolute;
+  top: 29%;
+  left: 29%;
+  width: 42%;
+  height: 42%;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.22);
+  border: 1.5px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 0 16px 45px rgba(0, 0, 0, 0.4);
+}
+
+.brandContent {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 440px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: translateY(-16px);
+}
+
+.logoBadgeContainer {
+  text-decoration: none;
+  margin-bottom: 1.6rem;
+  transition: transform 0.4s var(--ease-smooth);
+  display: inline-block;
+}
+
+.logoBadgeContainer:hover {
+  transform: scale(1.05);
+}
+
+.logoBadgeInner {
+  width: 116px;
+  height: 116px;
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 2px solid rgba(255, 255, 255, 0.28);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.38);
+}
+
+.logoIconCircle {
+  width: 78px;
+  height: 78px;
+  border-radius: 50%;
+  background: #7D0404;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid rgba(255, 255, 255, 0.45);
+  box-shadow: 0 6px 20px rgba(125, 4, 4, 0.75);
+}
+
+.brandTitle {
+  font-family: var(--font-display);
+  font-size: 2.7rem;
+  font-weight: 900;
+  color: #FFFFFF;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.9rem;
+}
+
+.brandTitle span {
+  color: #FF3B3B;
+  font-weight: 800;
+}
+
+.brandSubtitle {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.84);
+  line-height: 1.6;
+  font-weight: 500;
+  max-width: 390px;
+}
+
+/* --------------------------------------------------------------------------
+   RIGHT COLUMN: FORM CARD (SCROLLABLE & CENTERED)
+   -------------------------------------------------------------------------- */
+.rightFormCol {
+  flex: 1;
+  min-height: 100vh;
+  background-color: #F8FAFC;
+  background-image: radial-gradient(circle at 100% 0%, rgba(125, 4, 4, 0.05) 0%, transparent 40%),
+                    radial-gradient(circle at 0% 100%, rgba(125, 4, 4, 0.03) 0%, transparent 40%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 2rem;
+  position: relative;
+  overflow-y: auto;
+}
+
+.formContainer {
+  width: 100%;
+  max-width: 440px;
+  margin: auto;
+}
+
+.loginCard {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(28px) saturate(180%);
+  -webkit-backdrop-filter: blur(28px) saturate(180%);
+  border: 1.5px solid rgba(255, 255, 255, 0.9);
+  border-top: 1.5px solid #FFFFFF;
+  border-radius: 28px;
+  padding: 2.6rem 2.4rem;
+  box-shadow: 0 20px 55px rgba(0, 0, 0, 0.06), 0 2px 8px rgba(0, 0, 0, 0.02);
+  transition: box-shadow 0.4s var(--ease-smooth);
+}
+
+.cardTitle {
+  font-family: var(--font-sans);
+  font-size: 1.58rem;
+  font-weight: 900;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+  margin-bottom: 0.35rem;
+}
+
+.cardSubtitle {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  margin-bottom: 1.8rem;
+}
+
+.errorAlert {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.75rem 1.05rem;
+  background: #FEF2F2;
+  border: 1.5px solid #FCA5A5;
+  border-radius: 12px;
+  color: #7D0404;
+  font-size: 0.84rem;
+  font-weight: 700;
+  margin-bottom: 1.3rem;
+}
+
+.formBody {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.fieldLabel {
+  font-size: 0.86rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.inputWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.inputIcon {
+  position: absolute;
+  left: 1.1rem;
+  color: #94A3B8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.textInput {
+  width: 100%;
+  padding: 0.88rem 1.1rem 0.88rem 2.85rem;
+  background: #F1F5F9;
+  border: 1.5px solid transparent;
+  border-radius: 14px;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  outline: none;
+  transition: all 0.3s var(--ease-smooth);
+}
+
+.textInput::placeholder {
+  color: #94A3B8;
+  font-weight: 500;
+}
+
+.textInput:hover {
+  background: #E2E8F0;
+}
+
+.textInput:focus {
+  background: #FFFFFF;
+  border-color: #7D0404;
+  box-shadow: 0 0 0 3.5px rgba(125, 4, 4, 0.15);
+}
+
+.eyeBtn {
+  position: absolute;
+  right: 1rem;
+  background: transparent;
+  border: none;
+  color: #94A3B8;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.25s var(--ease-smooth);
+}
+
+.eyeBtn:hover {
+  color: #7D0404;
+}
+
+.forgotRow {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: -0.25rem;
+}
+
+.forgotLink {
+  background: transparent;
+  border: none;
+  color: #7D0404;
+  font-size: 0.82rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: color 0.2s;
+  padding: 0;
+}
+
+.forgotLink:hover {
+  color: #9E0A0A;
+  text-decoration: underline;
+}
+
+/* Full Width Primary Submit Button */
+.submitBtn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  padding: 0.95rem 1.4rem;
+  background: #7D0404;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 14px;
+  font-family: var(--font-sans);
+  font-size: 0.94rem;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(125, 4, 4, 0.4);
+  transition: all 0.35s var(--ease-smooth);
+  margin-top: 0.5rem;
+}
+
+.submitBtn:hover {
+  background: #9E0A0A;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(125, 4, 4, 0.55);
+}
+
+.submitBtn:active {
+  transform: translateY(0);
+}
+
+.submitBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.cardFooter {
+  text-align: center;
+  margin-top: 1.8rem;
+  font-size: 0.86rem;
+  color: var(--text-secondary);
+}
+
+.registerLink {
+  color: #7D0404;
+  font-weight: 900;
+  text-decoration: none;
+  margin-left: 0.3rem;
+  transition: color 0.2s;
+}
+
+.registerLink:hover {
+  color: #9E0A0A;
+  text-decoration: underline;
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE DESIGN (TABLET & MOBILE)
+   -------------------------------------------------------------------------- */
+@media (max-width: 960px) {
+  .splitPage {
+    flex-direction: column;
+    overflow-y: auto;
+  }
+
+  .leftBrandCol {
+    flex: none;
+    width: 100%;
+    height: auto;
+    position: relative;
+    padding: 3rem 1.5rem 2.5rem;
+  }
+
+  .ambientCirclesBg {
+    width: 440px;
+    height: 440px;
+    top: 50%;
+  }
+
+  .brandContent {
+    transform: none;
+  }
+
+  .brandTitle {
+    font-size: 2.2rem;
+  }
+
+  .rightFormCol {
+    min-height: auto;
+    padding: 2rem 1.5rem 4rem;
+  }
+
+  .loginCard {
+    padding: 2.2rem 1.8rem;
+  }
+}
