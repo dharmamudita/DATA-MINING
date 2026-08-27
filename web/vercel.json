@@ -1,0 +1,15 @@
+{
+  "functions": {
+    "api/predict.py": {
+      "runtime": "python3.12",
+      "maxDuration": 30,
+      "includeFiles": "api/model/**"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "/api/:path*"
+    }
+  ]
+}
