@@ -1,0 +1,364 @@
+/* ==========================================================================
+   HISTORY PAGE MODULE CSS — EXACT PORTALSPPG AESTHETICS
+   ========================================================================== */
+
+.main {
+  min-height: 100vh;
+  padding-bottom: 6rem;
+  position: relative;
+}
+
+.contentWrapper {
+  padding-top: 7.5rem;
+  max-width: 1080px;
+  position: relative;
+  z-index: 1;
+}
+
+/* --- Page Header (Over Crimson Background) --- */
+.pageHeader {
+  margin-bottom: 2.8rem;
+}
+
+.titleRow {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-bottom: 0.5rem;
+}
+
+.pageTitle {
+  font-family: var(--font-display);
+  font-size: 2.6rem;
+  font-weight: 900;
+  color: #FFFFFF;
+  letter-spacing: -0.02em;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.pageTitle span {
+  color: #FF3B3B;
+}
+
+.titleIconBadge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--r-md);
+  background: rgba(255, 255, 255, 0.2);
+  border: 1.5px solid rgba(255, 255, 255, 0.35);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.pageSubtitle {
+  font-size: 1.05rem;
+  color: #FFECEC;
+  line-height: 1.6;
+  margin-bottom: 1.75rem;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* --- Filter Pills Row --- */
+.filterPillsRow {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.filterPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.35rem;
+  border-radius: var(--r-full);
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(12px);
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  color: #FFFFFF;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all var(--ease-smooth);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.filterPill:hover {
+  background: rgba(0, 0, 0, 0.6);
+  border-color: #FFFFFF;
+}
+
+.filterPillActive {
+  background: #FFFFFF !important;
+  color: var(--blood-base) !important;
+  border-color: #FFFFFF !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+  font-weight: 900 !important;
+}
+
+/* --- Summary 3-Card Grid --- */
+.summaryGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.4rem;
+  margin-bottom: 2.8rem;
+}
+
+.summaryCard {
+  text-align: center;
+  padding: 2.2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #FFFFFF;
+  border: 1.5px solid #CBD5E1;
+}
+
+.summaryIconBadge {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--r-md);
+  background: var(--blood-subtle-bg);
+  border: 1.5px solid var(--blood-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.1rem;
+}
+
+.summaryValue {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 900;
+  color: var(--blood-base);
+  margin-bottom: 0.35rem;
+  line-height: 1;
+}
+
+.summaryLabel {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 0.3rem;
+}
+
+.summarySub {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+/* --- History List Cards --- */
+.historyListSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+
+.emptyCard {
+  text-align: center;
+  padding: 4rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  border: 1.5px solid #CBD5E1;
+}
+
+.emptyCard h3 {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-top: 0.5rem;
+}
+
+.emptyCard p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.historyCard {
+  padding: 2rem;
+  background: #FFFFFF;
+  border: 1.5px solid #CBD5E1;
+}
+
+.historyCardTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid #E2E8F0;
+}
+
+.patientInfo {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+}
+
+.patientAvatar {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--r-md);
+  background: var(--blood-subtle-bg);
+  border: 1.5px solid var(--blood-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.patientName {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 0.2rem;
+}
+
+.historyDate {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+.statusBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.45rem 1rem;
+  border-radius: var(--r-full);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+}
+
+.statusBadgeDanger {
+  background: #FEF2F2;
+  color: var(--blood-base);
+  border: 1.5px solid rgba(125, 4, 4, 0.3);
+}
+
+.statusBadgeSafe {
+  background: #F0FDF4;
+  color: #059669;
+  border: 1.5px solid rgba(5, 150, 105, 0.3);
+}
+
+.historyCardActions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.exportPdfBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.45rem 0.95rem;
+  border-radius: var(--r-full);
+  background: var(--blood-subtle-bg);
+  border: 1.5px solid var(--blood-border);
+  color: var(--blood-base);
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.25s var(--ease-smooth);
+  box-shadow: 0 2px 6px rgba(125, 4, 4, 0.08);
+}
+
+.exportPdfBtn:hover {
+  background: var(--blood-base);
+  color: #FFFFFF;
+  border-color: var(--blood-base);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(125, 4, 4, 0.3);
+}
+
+/* Metrics Row inside History Card */
+.metricsRow {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.4rem;
+  background: #F8FAFC;
+  padding: 1.15rem 1.4rem;
+  border-radius: var(--r-md);
+  border: 1.5px solid #CBD5E1;
+}
+
+.metricItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.metricLabel {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  font-weight: 700;
+}
+
+.metricValue {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+/* Recommendation Box */
+.recommendationBox {
+  background: #FFFFFF;
+  border: 1.5px solid #CBD5E1;
+  border-radius: var(--r-md);
+  padding: 1.15rem 1.35rem;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.recHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.4rem;
+}
+
+.recHeader strong {
+  font-size: 0.88rem;
+  color: var(--text-primary);
+  font-weight: 800;
+}
+
+/* --- Responsive --- */
+@media (max-width: 1024px) {
+  .summaryGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .metricsRow {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .contentWrapper {
+    padding-top: 6.5rem;
+  }
+
+  .historyCardTop {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .metricsRow {
+    grid-template-columns: 1fr;
+  }
+
+  .pageTitle {
+    font-size: 2rem;
+  }
+}
