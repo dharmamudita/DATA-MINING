@@ -440,23 +440,21 @@
 /* --- Photo Lightbox Modal (Viewport-Locked Fixed Overlay) --- */
 .lightboxBackdrop {
   position: fixed !important;
-  top: 0 !important;
-  left: 0 !important;
-  right: 0 !important;
-  bottom: 0 !important;
+  inset: 0 !important;
   width: 100vw !important;
   height: 100vh !important;
   background: rgba(10, 2, 2, 0.85) !important;
-  backdrop-filter: blur(20px) saturate(180%);
-  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
-  z-index: 999999 !important;
+  z-index: 2147483647 !important;
   padding: 1.5rem;
   box-sizing: border-box;
   overflow-y: auto;
-  animation: fadeIn 0.25s ease-out;
+  cursor: pointer;
+  animation: fadeIn 0.2s ease-out;
 }
 
 .lightboxCard {
@@ -472,8 +470,10 @@
   align-items: center;
   position: relative;
   box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.2);
-  animation: scaleUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  animation: scaleUp 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   margin: auto;
+  cursor: default;
+  pointer-events: auto;
 }
 
 @keyframes fadeIn {
