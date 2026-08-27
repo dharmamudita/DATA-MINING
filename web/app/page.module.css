@@ -1,0 +1,802 @@
+/* ==========================================================================
+   LANDING PAGE MODULE CSS — EXACT PORTALSPPG AESTHETICS & HIGH CONTRAST
+   ========================================================================== */
+
+.main {
+  min-height: 100vh;
+  position: relative;
+}
+
+/* --- Hero Section (Over Top Deep Crimson Background) --- */
+.heroSection {
+  position: relative;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  padding: 8.5rem 0 4.5rem;
+  background: transparent;
+}
+
+.heroContainer,
+.heroWrapper {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.heroBadgeWrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1.8rem;
+}
+
+.heroBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.55rem 1.35rem;
+  border-radius: var(--r-full);
+  font-size: 0.84rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  letter-spacing: 0.02em;
+  margin-bottom: 1.5rem;
+}
+
+.badgeDot,
+.badgePulseDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #FF3B3B;
+  box-shadow: 0 0 10px #FF3B3B;
+  flex-shrink: 0;
+}
+
+.badgeText {
+  color: #FFFFFF;
+}
+
+.heroTitle,
+.heroHeading {
+  font-size: clamp(2.5rem, 5.5vw, 4.2rem);
+  font-weight: 900;
+  line-height: 1.15;
+  margin-bottom: 1.8rem;
+  letter-spacing: -0.03em;
+  color: #FFFFFF !important;
+  text-shadow: 0 3px 15px rgba(0, 0, 0, 0.6);
+}
+
+.heroGradientText {
+  color: #FF3B3B !important;
+  display: inline-block;
+  text-shadow: 0 3px 15px rgba(0, 0, 0, 0.6), 0 0 20px rgba(255, 59, 59, 0.4);
+}
+
+/* --- Hero Subtitle in Frosted Liquid Glass Card (Hitam & Merah High Contrast) --- */
+.heroSubtitle {
+  font-size: 1.05rem;
+  color: #0F172A; /* Hitam Charcoal */
+  line-height: 1.8;
+  max-width: 860px;
+  margin: 0 auto 2.8rem;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 1.35rem 2.2rem;
+  border-radius: var(--r-xl);
+  border: 1.5px solid rgba(255, 255, 255, 0.95);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12), 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.heroSubtitle strong {
+  color: var(--blood-base); /* Merah #7D0404 */
+  font-weight: 900;
+}
+
+.heroSubtitle em {
+  color: var(--blood-base); /* Merah #7D0404 */
+  font-style: normal;
+  font-weight: 900;
+}
+
+.heroActions,
+.heroCtaGroup {
+  display: flex;
+  gap: 1.25rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 3.5rem;
+}
+
+.trustRow {
+  display: flex;
+  justify-content: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.trustItem {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.55rem 1.25rem;
+  background: #FFFFFF;
+  border: 1.5px solid #CBD5E1;
+  border-radius: var(--r-full);
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: #0F172A; /* Hitam Charcoal */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+}
+
+/* --- Section Headers (In Lower Frosted Slate Area) --- */
+.sectionHeader {
+  text-align: center;
+  max-width: 740px;
+  margin: 0 auto 3.5rem;
+}
+
+.sectionTag {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  color: var(--blood-base);
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.sectionTitle {
+  font-size: 2.4rem;
+  font-weight: 900;
+  color: var(--text-primary);
+  margin-bottom: 0.85rem;
+  letter-spacing: -0.02em;
+}
+
+.sectionDesc {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+
+/* --- Stats Section --- */
+.statsSection {
+  padding: 5.5rem 0 6rem;
+  position: relative;
+  background: transparent;
+}
+
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+.statCard {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  padding: 2.25rem 2rem;
+  transition: transform 0.45s var(--ease-smooth),
+              box-shadow 0.45s var(--ease-smooth),
+              border-color 0.45s var(--ease-smooth);
+}
+
+.statCard:hover {
+  transform: translateY(-5px);
+  border-color: rgba(125, 4, 4, 0.4);
+  box-shadow: 0 20px 45px rgba(125, 4, 4, 0.12);
+}
+
+.statIconBadge {
+  font-size: 1.75rem;
+  margin-bottom: 1.25rem;
+  width: 52px;
+  height: 52px;
+  border-radius: var(--r-md);
+  background: var(--blood-subtle-bg);
+  border: 1.5px solid var(--blood-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.statValue {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: var(--blood-base);
+  margin-bottom: 0.4rem;
+  line-height: 1;
+}
+
+.statLabel {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 0.65rem;
+}
+
+.statExplanation {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+
+/* --- Workflow Section --- */
+.workflowSection {
+  padding: 5rem 0 7.5rem;
+  position: relative;
+  background: transparent;
+}
+
+.workflowGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 3.5rem;
+}
+
+.workflowCard {
+  display: flex;
+  flex-direction: column;
+  padding: 2.25rem 2rem;
+  transition: transform 0.45s var(--ease-smooth),
+              box-shadow 0.45s var(--ease-smooth),
+              border-color 0.45s var(--ease-smooth);
+}
+
+.workflowCard:hover {
+  transform: translateY(-5px);
+  border-color: rgba(125, 4, 4, 0.4);
+  box-shadow: 0 20px 45px rgba(125, 4, 4, 0.12);
+}
+
+.stepNumberCircle {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--r-md);
+  background-color: var(--blood-base);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.4rem;
+  box-shadow: 0 4px 14px rgba(125, 4, 4, 0.35);
+}
+
+.stepTitle {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+}
+
+.stepDesc {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin-bottom: 1.25rem;
+  flex-grow: 1;
+}
+
+.stepPill {
+  display: inline-block;
+  align-self: flex-start;
+  padding: 0.35rem 0.9rem;
+  border-radius: var(--r-full);
+  background: var(--blood-subtle-bg);
+  border: 1.5px solid var(--blood-border);
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: var(--blood-base);
+}
+
+/* --- Team & Lecturer Section --- */
+.teamSection {
+  padding: 5.5rem 0;
+  position: relative;
+  z-index: 1;
+}
+
+.lecturerWrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.lecturerCard {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2.4rem 3rem;
+  border-radius: var(--card-radius);
+  max-width: 460px;
+  width: 100%;
+  border: 1.5px solid rgba(125, 4, 4, 0.25);
+  box-shadow: 0 16px 45px rgba(125, 4, 4, 0.08);
+  transition: transform 0.45s var(--ease-smooth),
+              box-shadow 0.45s var(--ease-smooth),
+              border-color 0.45s var(--ease-smooth);
+}
+
+.lecturerCard:hover {
+  transform: translateY(-6px);
+  border-color: rgba(125, 4, 4, 0.5);
+  box-shadow: 0 24px 55px rgba(125, 4, 4, 0.16);
+}
+
+.lecturerRoleBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 1.1rem;
+  background: #FEF2F2;
+  border: 1px solid #FECACA;
+  border-radius: var(--r-full);
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: var(--blood-base);
+  margin-bottom: 0.5rem;
+}
+
+.teamGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.8rem;
+}
+
+.teamCard {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2.5rem 2rem;
+  border-radius: var(--card-radius);
+  transition: transform 0.45s var(--ease-smooth),
+              box-shadow 0.45s var(--ease-smooth),
+              border-color 0.45s var(--ease-smooth);
+}
+
+.teamCard:hover {
+  transform: translateY(-6px);
+  border-color: rgba(125, 4, 4, 0.4);
+  box-shadow: 0 24px 55px rgba(125, 4, 4, 0.14);
+}
+
+.teamAvatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  background: var(--blood-base);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 1.75rem;
+  font-weight: 900;
+  margin-bottom: 1.3rem;
+  box-shadow: 0 8px 25px rgba(125, 4, 4, 0.45);
+  border: 3.5px solid #FFFFFF;
+  overflow: hidden;
+  position: relative;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: transform 0.35s var(--ease-smooth),
+              box-shadow 0.35s var(--ease-smooth),
+              border-color 0.35s var(--ease-smooth);
+}
+
+.teamAvatar:hover {
+  transform: scale(1.08);
+  box-shadow: 0 12px 30px rgba(125, 4, 4, 0.65);
+  border-color: #FFECEC;
+}
+
+.teamImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+  display: block;
+}
+
+.teamName {
+  font-family: var(--font-sans);
+  font-size: 1.22rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 0.35rem;
+}
+
+.teamNpmBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.9rem;
+  background: #FEF2F2;
+  border: 1px solid #FECACA;
+  border-radius: var(--r-full);
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: var(--blood-base);
+}
+
+/* --- Photo Lightbox Modal (Viewport-Locked Fixed Overlay) --- */
+.lightboxBackdrop {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  background: rgba(10, 2, 2, 0.85) !important;
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  z-index: 999999 !important;
+  padding: 1.5rem;
+  box-sizing: border-box;
+  overflow-y: auto;
+  animation: fadeIn 0.25s ease-out;
+}
+
+.lightboxCard {
+  background: #FFFFFF;
+  border: 1.5px solid rgba(255, 255, 255, 0.95);
+  border-radius: 28px;
+  padding: 2.2rem;
+  max-width: 440px;
+  width: 100%;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 255, 255, 0.2);
+  animation: scaleUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  margin: auto;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleUp {
+  from { opacity: 0; transform: scale(0.92); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.lightboxCloseBtn {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.2rem;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #F1F5F9;
+  border: 1px solid #CBD5E1;
+  color: #0F172A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: 700;
+  transition: all 0.25s var(--ease-smooth);
+  z-index: 10;
+}
+
+.lightboxCloseBtn:hover {
+  background: var(--blood-base);
+  color: #FFFFFF;
+  border-color: var(--blood-base);
+  transform: rotate(90deg);
+}
+
+.lightboxImageWrapper {
+  width: 100%;
+  max-height: 480px;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  margin-bottom: 1.3rem;
+  background: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightboxImg {
+  width: 100%;
+  height: auto;
+  max-height: 480px;
+  object-fit: contain;
+  display: block;
+}
+
+.lightboxTitle {
+  font-family: var(--font-sans);
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 0.4rem;
+  text-align: center;
+}
+
+.lightboxSubtitle {
+  font-size: 0.9rem;
+  color: var(--blood-base);
+  font-weight: 800;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .teamGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --- CTA Banner --- */
+.ctaBanner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 3.2rem;
+  gap: 2.5rem;
+  border: 1.5px solid rgba(255, 255, 255, 0.9);
+}
+
+.ctaBannerText h3 {
+  font-size: 1.75rem;
+  font-weight: 900;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.ctaBannerText p {
+  color: var(--text-secondary);
+  font-size: 1rem;
+}
+
+/* --- Footer --- */
+.footer {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(255, 255, 255, 0.8);
+  padding: 5rem 0 3rem;
+  position: relative;
+  z-index: 1;
+}
+
+.footerMain {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 4rem;
+  margin-bottom: 3.5rem;
+}
+
+.footerBrand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.2rem;
+}
+
+.footerBrandLogo {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--blood-base);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(125, 4, 4, 0.3);
+}
+
+.footerBrandText {
+  display: flex;
+  flex-direction: column;
+}
+
+.brandName {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 900;
+  color: var(--blood-base);
+}
+
+.brandSub {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.footerAbout {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  max-width: 500px;
+}
+
+.footerCol h4 {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--text-primary);
+  margin-bottom: 1.25rem;
+  letter-spacing: 0.02em;
+}
+
+.footerText {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+}
+
+.footerText strong {
+  color: var(--blood-base);
+}
+
+.footerList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.footerList li {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.footerList li span {
+  color: var(--blood-base);
+  font-weight: 900;
+}
+
+.footerBottom {
+  padding-top: 2.5rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.disclaimerBox {
+  padding: 1.25rem 1.6rem;
+  font-size: 0.82rem;
+  color: #450A0A;
+  line-height: 1.65;
+  margin-bottom: 1.75rem;
+  background: var(--blood-subtle-bg);
+  border: 1.5px solid var(--blood-border);
+  border-radius: var(--r-md);
+}
+
+.disclaimerBox strong {
+  color: var(--blood-base);
+}
+
+.copyright {
+  text-align: center;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+/* --- Responsive --- */
+@media (max-width: 1024px) {
+  .statsGrid,
+  .workflowGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footerMain {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .ctaBanner {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroSection {
+    padding: 6.5rem 0.5rem 3.5rem;
+  }
+
+  .heroBadge {
+    font-size: 0.76rem;
+    padding: 0.45rem 0.9rem;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .heroTitle {
+    font-size: clamp(1.8rem, 6vw, 2.6rem) !important;
+    line-height: 1.25;
+    margin-bottom: 1.2rem;
+  }
+
+  .heroSubtitle {
+    padding: 1rem 1.15rem;
+    font-size: 0.88rem;
+    line-height: 1.65;
+    margin-bottom: 1.8rem;
+  }
+
+  .heroActions {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    width: 100%;
+  }
+
+  .heroActions button {
+    width: 100%;
+    max-width: 320px;
+    justify-content: center;
+  }
+
+  .statsGrid,
+  .workflowGrid,
+  .teamGrid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+
+  .trustRow {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+    padding-top: 1.2rem;
+  }
+
+  .trustItem {
+    width: 100%;
+    max-width: 320px;
+    justify-content: center;
+    font-size: 0.8rem;
+    padding: 0.45rem 0.8rem;
+  }
+
+  .ctaBanner {
+    padding: 2rem 1.25rem;
+    text-align: center;
+  }
+
+  .ctaBannerText h3 {
+    font-size: 1.35rem;
+  }
+
+  .footer {
+    padding: 3.5rem 0 2rem;
+  }
+
+  .footerMain {
+    gap: 2rem;
+  }
+}
