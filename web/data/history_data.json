@@ -1,0 +1,72 @@
+[
+  {
+    "id": "SCR-20260827-001",
+    "date": "27 Agu 2026, 14:20 WIB",
+    "patientName": "Pasien #1042 (Pria, 52 Thn)",
+    "age": "50-54 Tahun",
+    "sex": "Laki-laki",
+    "bmi": 28.4,
+    "highBP": "Ya",
+    "highChol": "Ya",
+    "prediction": 1,
+    "probability": 0.924,
+    "status": "TERINDIKASI BERISIKO",
+    "recommendation": "Ditemukan riwayat hipertensi dan hiperkolesterolemia dengan BMI berlebih. Sangat disarankan pemeriksaan EKG berkala dan konsultasi spesialis jantung."
+  },
+  {
+    "id": "SCR-20260827-002",
+    "date": "27 Agu 2026, 11:45 WIB",
+    "patientName": "Pasien #1041 (Wanita, 38 Thn)",
+    "age": "35-39 Tahun",
+    "sex": "Perempuan",
+    "bmi": 22.1,
+    "highBP": "Tidak",
+    "highChol": "Tidak",
+    "prediction": 0,
+    "probability": 0.968,
+    "status": "TIDAK BERISIKO",
+    "recommendation": "Profil biometrik dan pola konsumsi dalam batas normal optimal. Pertahankan aktivitas fisik rutin dan diet seimbang."
+  },
+  {
+    "id": "SCR-20260826-003",
+    "date": "26 Agu 2026, 16:30 WIB",
+    "patientName": "Pasien #1040 (Pria, 61 Thn)",
+    "age": "60-64 Tahun",
+    "sex": "Laki-laki",
+    "bmi": 25.8,
+    "highBP": "Ya",
+    "highChol": "Tidak",
+    "prediction": 1,
+    "probability": 0.885,
+    "status": "TERINDIKASI BERISIKO",
+    "recommendation": "Terdapat faktor risiko usia lanjut dan hipertensi terdeteksi. Disarankan pembatasan konsumsi natrium dan olahraga kardio ringan."
+  },
+  {
+    "id": "SCR-20260826-004",
+    "date": "26 Agu 2026, 09:15 WIB",
+    "patientName": "Pasien #1039 (Pria, 29 Thn)",
+    "age": "25-29 Tahun",
+    "sex": "Laki-laki",
+    "bmi": 23.5,
+    "highBP": "Tidak",
+    "highChol": "Tidak",
+    "prediction": 0,
+    "probability": 0.982,
+    "status": "TIDAK BERISIKO",
+    "recommendation": "Kondisi kardiovaskular sangat prima. Tidak ditemukan anomali pada 21 variabel rekam medis."
+  },
+  {
+    "id": "SCR-20260825-005",
+    "date": "25 Agu 2026, 15:10 WIB",
+    "patientName": "Pasien #1038 (Wanita, 57 Thn)",
+    "age": "55-59 Tahun",
+    "sex": "Perempuan",
+    "bmi": 31.2,
+    "highBP": "Ya",
+    "highChol": "Ya",
+    "prediction": 1,
+    "probability": 0.941,
+    "status": "TERINDIKASI BERISIKO",
+    "recommendation": "Kombinasi obesitas derajat 1, hipertensi, dan dislipidemia menuntut penurunan berat badan terprogram serta terapi medis dokter."
+  }
+]
