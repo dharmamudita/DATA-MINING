@@ -1,0 +1,460 @@
+/* ==========================================================================
+   PREDICTION WIZARD MODULE CSS — EXACT PORTALSPPG AESTHETICS
+   ========================================================================== */
+
+.main {
+  min-height: 100vh;
+  padding-bottom: 6rem;
+  position: relative;
+}
+
+/* --- Content Wrapper --- */
+.contentWrapper {
+  padding-top: 8.8rem;
+  max-width: 960px;
+  position: relative;
+  z-index: 1;
+}
+
+/* --- Stepper Progress Bar (Over Top Crimson Banner) --- */
+.stepperContainer {
+  position: relative;
+  margin-bottom: 3.2rem;
+  padding: 0 0.5rem;
+}
+
+.stepperTrack {
+  position: absolute;
+  top: 28px;
+  left: 60px;
+  right: 60px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 3px;
+  z-index: 0;
+}
+
+.stepperFill {
+  height: 100%;
+  background: #FFFFFF;
+  border-radius: 3px;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.8);
+  transition: width 0.5s var(--ease-smooth);
+}
+
+.stepsList {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  z-index: 1;
+}
+
+.stepNode {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: all var(--ease-smooth);
+}
+
+.stepCircle {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--r-full);
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(12px);
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  transition: all var(--ease-smooth);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+  margin-bottom: 0.75rem;
+}
+
+.stepNodeActive .stepCircle {
+  background: #FFFFFF;
+  border-color: #FFFFFF;
+  color: var(--blood-base);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35), 0 0 15px rgba(255, 255, 255, 0.6);
+  transform: scale(1.12);
+}
+
+.stepNodeDone .stepCircle {
+  background: var(--blood-base);
+  border-color: #FFFFFF;
+  color: #FFFFFF;
+  box-shadow: 0 4px 14px rgba(125, 4, 4, 0.6);
+}
+
+.stepTextGroup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.stepNodeLabel {
+  font-size: 0.9rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+  transition: color var(--ease-smooth);
+}
+
+.stepNodeActive .stepNodeLabel {
+  color: #FFFFFF;
+  font-weight: 900;
+}
+
+.stepNodeDone .stepNodeLabel {
+  color: #FF4D4D;
+}
+
+.stepNodeDesc {
+  font-size: 0.74rem;
+  color: #FFECEC;
+  font-weight: 600;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+/* --- Wizard Card Body (Clean White Frosted Glass Card) --- */
+.wizardCard {
+  padding: 3.2rem;
+  background: #FFFFFF;
+  border: 1.5px solid #CBD5E1;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.06);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 1.35rem;
+  margin-bottom: 2.4rem;
+  padding-bottom: 1.85rem;
+  border-bottom: 1px solid #E2E8F0;
+}
+
+.cardHeaderIcon {
+  width: 60px;
+  height: 60px;
+  border-radius: var(--r-md);
+  background: var(--blood-subtle-bg);
+  border: 1.5px solid var(--blood-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.cardHeaderTitle {
+  font-size: 1.55rem;
+  font-weight: 900;
+  color: var(--text-primary);
+  margin-bottom: 0.35rem;
+}
+
+.cardHeaderSub {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* --- Sliders Special Elements --- */
+.sliderHeaderRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.55rem;
+}
+
+/* Elegant BMI Badges */
+.bmiBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 0.45rem 1.15rem;
+  border-radius: var(--r-full);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: all var(--ease-smooth);
+}
+
+.bmiBadgeNormal {
+  background-color: #F0FDF4;
+  border: 1.5px solid #86EFAC;
+  color: #166534;
+}
+
+.bmiBadgeNormal strong {
+  color: #15803D;
+  font-weight: 900;
+}
+
+.bmiBadgeWarning {
+  background-color: #FFFBEB;
+  border: 1.5px solid #FCD34D;
+  color: #92400E;
+}
+
+.bmiBadgeWarning strong {
+  color: #B45309;
+  font-weight: 900;
+}
+
+.bmiBadgeDanger {
+  background-color: #FEF2F2;
+  border: 1.5px solid #FCA5A5;
+  color: #991B1B;
+}
+
+.bmiBadgeDanger strong {
+  color: var(--blood-base);
+  font-weight: 900;
+}
+
+.bmiBadgeInfo {
+  background-color: #EFF6FF;
+  border: 1.5px solid #93C5FD;
+  color: #1E40AF;
+}
+
+.bmiBadgeInfo strong {
+  color: #2563EB;
+  font-weight: 900;
+}
+
+.bmiDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.bmiBadgeNormal .bmiDot {
+  background-color: #16A34A;
+  box-shadow: 0 0 6px rgba(22, 163, 74, 0.5);
+}
+
+.bmiBadgeWarning .bmiDot {
+  background-color: #D97706;
+  box-shadow: 0 0 6px rgba(217, 119, 6, 0.5);
+}
+
+.bmiBadgeDanger .bmiDot {
+  background-color: var(--blood-base);
+  box-shadow: 0 0 6px rgba(125, 4, 4, 0.5);
+}
+
+.bmiBadgeInfo .bmiDot {
+  background-color: #2563EB;
+  box-shadow: 0 0 6px rgba(37, 99, 235, 0.5);
+}
+
+.dayValueBadge {
+  font-size: 0.84rem;
+  color: var(--text-primary);
+  background: var(--blood-subtle-bg);
+  padding: 0.45rem 1.15rem;
+  border-radius: var(--r-full);
+  border: 1.5px solid var(--blood-border);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.dayValueBadge strong {
+  color: var(--blood-base);
+  font-weight: 900;
+}
+
+/* --- Action Predict Wrapper --- */
+.actionPredictWrapper {
+  margin-top: 2.8rem;
+  padding-top: 2.2rem;
+  border-top: 1px solid #E2E8F0;
+}
+
+/* --- Stepper Navigation Footer --- */
+.stepperNavFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 2.8rem;
+  padding-top: 2.2rem;
+  border-top: 1px solid #E2E8F0;
+}
+
+/* --- Diagnostic Result Container --- */
+.resultContainer {
+  margin-top: 2.8rem;
+  padding-top: 2.2rem;
+  border-top: 1px solid #E2E8F0;
+}
+
+.resultBanner {
+  padding: 2.8rem;
+  border-radius: var(--r-lg);
+  position: relative;
+  overflow: hidden;
+}
+
+.resultDangerTheme {
+  background: #FEF2F2;
+  border: 2px solid var(--blood-base);
+}
+
+.resultSafeTheme {
+  background: #F0FDF4;
+  border: 2px solid #059669;
+}
+
+.resultBadgeTag {
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  border-radius: var(--r-full);
+  font-size: 0.82rem;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  margin-bottom: 1.2rem;
+}
+
+.resultDangerTheme .resultBadgeTag {
+  background: #FFFFFF;
+  color: var(--blood-base);
+  border: 1.5px solid rgba(125, 4, 4, 0.35);
+}
+
+.resultSafeTheme .resultBadgeTag {
+  background: #FFFFFF;
+  color: #059669;
+  border: 1.5px solid rgba(5, 150, 105, 0.35);
+}
+
+.resultTitleLarge {
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 900;
+  margin-bottom: 1.1rem;
+  letter-spacing: -0.02em;
+}
+
+.resultDangerTheme .resultTitleLarge {
+  color: var(--blood-base);
+}
+
+.resultSafeTheme .resultTitleLarge {
+  color: #059669;
+}
+
+.resultSummaryText {
+  font-size: 1.05rem;
+  color: var(--text-primary);
+  line-height: 1.75;
+  margin-bottom: 2.2rem;
+}
+
+/* --- Meter Bar --- */
+.meterContainer {
+  padding: 1.4rem 1.8rem;
+  border-radius: var(--r-md);
+  margin-bottom: 2.2rem;
+  background: #FFFFFF;
+  border: 1.5px solid #CBD5E1;
+}
+
+.meterLabels {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  font-weight: 700;
+  margin-bottom: 0.85rem;
+}
+
+.meterPercent {
+  font-size: 1.5rem;
+  font-family: var(--font-display);
+  color: var(--text-primary);
+  font-weight: 900;
+}
+
+.meterTrack {
+  height: 12px;
+  background: #E2E8F0;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.meterFill {
+  height: 100%;
+  border-radius: 6px;
+  transition: width 1.2s var(--ease-smooth);
+}
+
+.resultDangerTheme .meterFill {
+  background-color: var(--blood-base);
+}
+
+.resultSafeTheme .meterFill {
+  background-color: #059669;
+}
+
+/* --- Medical Advice Card --- */
+.adviceCard {
+  padding: 1.6rem;
+  border-radius: var(--r-md);
+  background: #FFFFFF;
+  border: 1.5px solid #CBD5E1;
+}
+
+.adviceHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.85rem;
+}
+
+.adviceHeader h4 {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.adviceBody {
+  font-size: 0.96rem;
+  line-height: 1.75;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+  .contentWrapper {
+    padding-top: 7rem;
+  }
+
+  .wizardCard {
+    padding: 1.85rem;
+  }
+
+  .stepsList {
+    gap: 0.5rem;
+  }
+
+  .stepCircle {
+    width: 44px;
+    height: 44px;
+  }
+
+  .stepNodeDesc {
+    display: none;
+  }
+
+  .stepperTrack {
+    top: 22px;
+    left: 30px;
+    right: 30px;
+  }
+}
